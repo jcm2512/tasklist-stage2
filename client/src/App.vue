@@ -1,15 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar color="green" dark fixed>
-      <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title>Title</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat>Link One</v-btn>
-        <v-btn flat>Link Two</v-btn>
-        <v-btn flat>Link Three</v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
+      <toolbar />
 
     <div id="app">
       <div id="nav">
@@ -20,6 +11,16 @@
     </div>
   </v-app>
 </template>
+
+<script>
+import Toolbar from './components/Toolbar.vue';
+
+export default {
+  components: {
+    Toolbar,
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
