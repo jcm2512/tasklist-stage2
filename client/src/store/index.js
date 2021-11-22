@@ -1,13 +1,18 @@
-import createPersistedState from 'vuex-persistedstate';
+// import createPersistedState from 'vuex-persistedstate';
 
 import Vue from 'vue';
 import Vuex from 'vuex';
+import authentiction from './authentication';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  strict: true,
   state: {
 
+  },
+  modules: {
+    authentiction,
   },
   mutations: {
 
@@ -15,7 +20,7 @@ export default new Vuex.Store({
   actions: {
 
   },
-  plugins: [
-    createPersistedState(),
-  ]
+  // plugins: [
+  //   createPersistedState(),
+  // ],
 });

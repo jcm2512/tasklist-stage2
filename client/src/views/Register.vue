@@ -5,13 +5,17 @@
   <h1>Register</h1>
   <v-text-field
     label="Email"
-    placeholder="Email">
+    placeholder="Email"
+    :value="registerEmail"
+    @input="setRegisterPassword">
     </v-text-field>
      <v-text-field
     label="Password"
     placeholder="Password"
     type="password"
-    autocomplete="new-password">
+    autocomplete="new-password"
+    :value="registerPassword"
+    @input="setRegisterEmail">
     </v-text-field>
     <v-btn color="green" dark><v-icon>account_circle</v-icon>Register</v-btn>
         </v-flex>
@@ -20,10 +24,20 @@
 </template>
 
 <script>
-import Toolbar from '../components/Toolbar.vue';
-export default {
-  components: { Toolbar },};
-</script>
+import { mapState, mapMutations } from 'vuex';
 
-<style>
-</style>
+export default {
+  computed: {
+    ...mapState('authentication', [
+      'registerEmail',
+      'registerPassword',
+    ]),
+  },
+  methods: {
+    ...mapMutations('authentication', [
+      'setRegisterEmail',
+      'setRegisterPassword',
+    ]),
+  },
+};
+</script>
